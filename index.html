@@ -1,447 +1,175 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <title>John Doe - Personal CV Website Template</title>
-        <meta content="width=device-width, initial-scale=1.0" name="viewport">
-        <meta content="Free Website Template" name="keywords">
-        <meta content="Free Website Template" name="description">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Krunal Jethi | Full-Stack Developer</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+    body {
+      background: linear-gradient(135deg, #111827, #1f2937);
+      color: #e5e7eb;
+    }
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInUp 1s forwards;
+    }
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    .fade-delay-1 { animation-delay: 0.3s; }
+    .fade-delay-2 { animation-delay: 0.6s; }
+    .fade-delay-3 { animation-delay: 0.9s; }
+    .glass {
+      background: rgba(31, 41, 55, 0.8);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(12px);
+    }
+    .scroll-to-top {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #3b82f6;
+      color: white;
+      padding: 0.5rem 1rem;
+      border-radius: 9999px;
+      font-weight: bold;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+      cursor: pointer;
+    }
+    .hero-landing {
+      background: linear-gradient(to bottom right, #1e293b, #111827);
+    }
+  </style>
+  <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
 
-        <!-- Favicon -->
-        <link href="img/favicon.ico" rel="icon">
+</head>
+<body class="text-gray-200 font-sans">
 
-        <!-- Google Fonts -->
-        <link rel="preconnect" href="https://fonts.gstatic.com">
-        <link href="https://fonts.googleapis.com/css2?family=Averia+Serif+Libre:wght@400;700&family=Poppins&display=swap" rel="stylesheet"> 
+  <!-- Navbar -->
+  <nav x-data="{ open: false }" class="fixed top-0 left-0 w-full bg-gray-900 shadow z-50 py-4 px-6 md:px-12 flex justify-between items-center">
+    <h1 class="text-xl font-bold text-indigo-400">Krunal Jethi</h1>
+  
+    <!-- Desktop Menu -->
+    <ul class="hidden md:flex space-x-6 font-medium text-gray-300">
+      <li><a href="#about" class="hover:text-indigo-300 transition duration-300">About</a></li>
+      <li><a href="#skills" class="hover:text-indigo-300 transition duration-300">Skills</a></li>
+      <li><a href="#projects" class="hover:text-indigo-300 transition duration-300">Projects</a></li>
+      <li><a href="#contact" class="hover:text-indigo-300 transition duration-300">Contact</a></li>
+      <li><a href="assets/KrunalCV-AWSCertified.pdf" class="bg-indigo-500 text-white px-4 py-1 rounded hover:bg-indigo-600 transition duration-300">Resume</a></li>
+    </ul>
+  
+    <!-- Mobile Button -->
+    <button @click="open = !open" class="md:hidden text-gray-300 focus:outline-none">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M4 6h16M4 12h16M4 18h16" />
+      </svg>
+    </button>
+  
+    <!-- Mobile Menu -->
+    <ul x-show="open" @click.away="open = false" class="absolute top-full left-0 w-full bg-gray-800 flex flex-col space-y-4 py-6 px-6 md:hidden text-gray-200">
+      <li><a href="#about" class="hover:text-indigo-300 transition">About</a></li>
+      <li><a href="#skills" class="hover:text-indigo-300 transition">Skills</a></li>
+      <li><a href="#projects" class="hover:text-indigo-300 transition">Projects</a></li>
+      <li><a href="#contact" class="hover:text-indigo-300 transition">Contact</a></li>
+      <li><a href="assets/KrunalCV-AWSCertified.pdf" class="bg-indigo-500 text-white px-4 py-1 rounded hover:bg-indigo-600 transition">Resume</a></li>
+    </ul>
+  </nav>
 
-        <!-- Font Awesome -->
-        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+  <div class="pt-24">
+    <!-- Hero Section -->
+    <section class="hero-landing py-32 px-6 text-center fade-in">
+      <h1 class="text-6xl md:text-8xl font-extrabold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-indigo-400 to-purple-500">Krunal Jethi</h1>
+      <p class="text-2xl md:text-3xl text-gray-300 mb-4">Full-Stack Developer</p>
+      <p class="text-lg text-gray-400 mb-8">React • Node.js • MySQL • Angular • AWS</p>
+      <div class="flex justify-center gap-4 text-4xl">
+        <span class="animate-bounce">⚛️</span>
+        <span class="animate-bounce delay-100">🌿</span>
+        <span class="animate-bounce delay-200">🛢️</span>
+        <span class="animate-bounce delay-300">🅰️</span>
+        <span class="animate-bounce delay-400">☁️</span>
+      </div>
+    </section>
 
-        <!-- Libraries Stylesheet -->
-        <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-        <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
-
-        <!-- Customized Bootstrap Stylesheet -->
-        <link href="css/style.css" rel="stylesheet">
-    </head>
-
-    <body data-spy="scroll" data-target=".navbar" data-offset="51">
-        <div class="wrapper">
-            <div class="sidebar">
-                <div class="sidebar-text d-flex flex-column h-100 justify-content-center text-center">
-                    <img class="w-100 img-fluid mb-4" src="img/profile.jpg" alt="Image">
-                    <h1 class="mt-2">Krunal Jethi</h1>
-                    <div class="mb-4" style="height: 22px;">
-                        <h4 class="typed-text-output d-inline-block text-body"></h4>
-                        <div class="typed-text d-none">Web Designer, Web Developer, Front End Developer, Apps Designer, Apps Developer</div>
-                    </div>
-                    <div class="d-flex justify-content-center mt-auto mb-3">
-                        <a class="mx-2" href="#"><i class="fab fa-twitter"></i></a>
-                        <a class="mx-2" href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a class="mx-2" href="#"><i class="fab fa-linkedin-in"></i></a>
-                        <a class="mx-2" href="#"><i class="fab fa-instagram"></i></a>
-                        <a class="mx-2" href="#"><i class="fab fa-youtube"></i></a>
-                    </div>
-                    <div class="d-flex align-items-end justify-content-between">
-                        <a href="" class="btn btn-block border-right">Download CV</a>
-                        <a href="#contact" class="btn btn-block btn-scroll">Contact Me</a>
-                    </div>
-                </div>
-                <div class="sidebar-icon d-flex flex-column h-100 justify-content-center text-right">
-                    <i class="fas fa-2x fa-angle-double-right text-primary"></i>
-                </div>
-            </div>
-            <div class="content">
-                <!-- About Start -->
-                <div class="container bg-white py-5">
-                    <div class="row px-3">
-                        <div class="col-12">
-                            <h2 class="title position-relative pb-2 mb-4">About Me</h2>
-                        </div>
-                        <div class="col-12">
-                            <p>Sea et gubergren justo invidunt at amet clita. Justo sit justo tempor et invidunt voluptua, lorem voluptua ipsum gubergren et est nonumy magna et vero, sit eos dolor sea sed et dolor erat et. Accusam accusam magna aliquyam eirmod amet est kasd dolore sanctus. Lorem ea vero lorem eos eos sanctus labore. Aliquyam vero ipsum dolor duo clita consetetur stet, aliquyam ipsum sea sed et magna amet dolor.</p>
-                            <div class="row">
-                                <div class="col-sm-6 py-1">
-                                    <h5 class="d-inline text-primary">Name:</h5> John Doe
-                                </div>
-                                <div class="col-sm-6 py-1">
-                                    <h5 class="d-inline text-primary">Birthday:</h5> 1 April 1990
-                                </div>
-                                <div class="col-sm-6 py-1">
-                                    <h5 class="d-inline text-primary">Degree:</h5> Master
-                                </div>
-                                <div class="col-sm-6 py-1">
-                                    <h5 class="d-inline text-primary">Experience:</h5> 10 Years
-                                </div>
-                                <div class="col-sm-6 py-1">
-                                    <h5 class="d-inline text-primary">Phone:</h5> +012 345 6789
-                                </div>
-                                <div class="col-sm-6 py-1">
-                                    <h5 class="d-inline text-primary">Email:</h5> info@example.com
-                                </div>
-                                <div class="col-sm-6 py-1">
-                                    <h5 class="d-inline text-primary">Address:</h5> 123 Street, New York, USA
-                                </div>
-                                <div class="col-sm-6 py-1">
-                                    <h5 class="d-inline text-primary">Freelance:</h5> Available
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- About End -->
-
-
-                <!-- Skills Start -->
-                <div class="container bg-white py-5">
-                    <div class="row px-3">
-                        <div class="col-12">
-                            <h2 class="title position-relative pb-2 mb-4">Skills</h2>
-                        </div>
-                        <div class="col-sm-6">
-                            <div class="skill mb-4">
-                                <div class="d-flex justify-content-between">
-                                    <p class="mb-2">HTML</p>
-                                    <p class="mb-2">95%</p>
-                                </div>
-                                <div class="progress">
-                                    <div class="progress-bar bg-primary" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
-                                </div>
-                            </div>
-                            <div class="skill mb-4">
-                                <div class="d-flex justify-content-between">
-                                    <p class="mb-2">CSS</p>
-                                    <p class="mb-2">85%</p>
-                                </div>
-                                <div class="progress">
-                                    <div class="progress-bar bg-warning" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
-                                </div>
-                            </div>
-                            <div class="skill mb-4">
-                                <div class="d-flex justify-content-between">
-                                    <p class="mb-2">PHP</p>
-                                    <p class="mb-2">90%</p>
-                                </div>
-                                <div class="progress">
-                                    <div class="progress-bar bg-danger" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-6">
-                            <div class="skill mb-4">
-                                <div class="d-flex justify-content-between">
-                                    <p class="mb-2">Javascript</p>
-                                    <p class="mb-2">90%</p>
-                                </div>
-                                <div class="progress">
-                                    <div class="progress-bar bg-danger" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
-                                </div>
-                            </div>
-                            <div class="skill mb-4">
-                                <div class="d-flex justify-content-between">
-                                    <p class="mb-2">Angular JS</p>
-                                    <p class="mb-2">95%</p>
-                                </div>
-                                <div class="progress">
-                                    <div class="progress-bar bg-dark" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
-                                </div>
-                            </div>
-                            <div class="skill mb-4">
-                                <div class="d-flex justify-content-between">
-                                    <p class="mb-2">Wordpress</p>
-                                    <p class="mb-2">85%</p>
-                                </div>
-                                <div class="progress">
-                                    <div class="progress-bar bg-info" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Skills End -->
+<!-- About Section -->
+<section id="about" class="px-6 md:px-24 py-24 bg-gray-900 text-gray-100">
+  <div class="bg-gray-800 bg-opacity-90 rounded-3xl shadow-2xl p-12 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+    <div class="flex justify-center">
+      <img src="img/profile.jpeg" alt="Krunal Jethi" class="w-56 h-56 rounded-full object-cover border-4 border-indigo-500 shadow-xl" />
+    </div>
+    <div>
+      <h2 class="text-5xl font-bold text-indigo-400 mb-6">About Me <span class='text-base text-gray-400'>(9+ years of experience)</span></h2>
+      <p class="text-lg text-gray-300 leading-relaxed mb-4">
+        I'm <span class="text-indigo-300 font-semibold">Krunal Jethi</span>, a passionate and experienced Full-Stack Developer with over 9 years of industry expertise. I specialize in building scalable and high-performance web applications using technologies like <strong>React</strong>, <strong>Node.js</strong>, <strong>MySQL</strong>, and <strong>Angular</strong>. My role often involves acting as a <strong>Solution Architect</strong>, designing robust system architectures that meet real-world business needs.
+      </p>
+      <p class="text-lg text-gray-400 leading-relaxed mb-6">
+        I recently earned my <span class="text-green-400 font-semibold">AWS Certified Developer – Associate</span> certification, enhancing my ability to create and deploy cloud-native applications. With a deep understanding of both frontend and backend technologies, I thrive in delivering clean, user-focused solutions that scale efficiently and perform reliably.
+      </p>
+      <div class="flex items-center space-x-4">
+        <img src="aws-certified.png" alt="AWS Certified Badge" class="w-14 h-14" />
+        <span class="text-sm text-green-400 font-semibold">AWS Certified Developer – Associate</span>
+      </div>
+    </div>
+  </div>
+</section>
 
 
-                <!-- Education Start -->
-                <div class="container bg-white py-5">
-                    <div class="row px-3">
-                        <div class="col-12">
-                            <h2 class="title position-relative pb-2 mb-4">Expericence</h2>
-                        </div>
-                        <div class="col-12">
-                            <div class="border-left border-primary pt-2 pl-4 ml-2">
-                                <div class="position-relative mb-4">
-                                    <i class="fa fa-arrow-right text-primary position-absolute" style="top: 3px; left: -24px;"></i>
-                                    <h5 class="mb-1">Web Designer</h5>
-                                    <p class="mb-2">Soft Company | <small>2000 - 2050</small></p>
-                                    <p>Tempor eos dolore amet tempor dolor tempor. Dolore ea magna sit amet dolor eirmod. Eos ipsum est tempor dolor. Clita lorem kasd sed ea lorem diam ea lorem eirmod duo sit ipsum stet lorem diam</p>
-                                </div>
-                                <div class="position-relative mb-4">
-                                    <i class="fa fa-arrow-right text-primary position-absolute" style="top: 3px; left: -24px;"></i>
-                                    <h5 class="mb-1">Web Designer</h5>
-                                    <p class="mb-2">Soft Company | <small>2000 - 2050</small></p>
-                                    <p>Tempor eos dolore amet tempor dolor tempor. Dolore ea magna sit amet dolor eirmod. Eos ipsum est tempor dolor. Clita lorem kasd sed ea lorem diam ea lorem eirmod duo sit ipsum stet lorem diam</p>
-                                </div>
-                                <div class="position-relative mb-4">
-                                    <i class="fa fa-arrow-right text-primary position-absolute" style="top: 3px; left: -24px;"></i>
-                                    <h5 class="mb-1">Web Designer</h5>
-                                    <p class="mb-2">Soft Company | <small>2000 - 2050</small></p>
-                                    <p>Tempor eos dolore amet tempor dolor tempor. Dolore ea magna sit amet dolor eirmod. Eos ipsum est tempor dolor. Clita lorem kasd sed ea lorem diam ea lorem eirmod duo sit ipsum stet lorem diam</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Education End -->
-                
-                
-                <!-- Subscribe Start -->
-                <div class="container bg-white py-5 px-0">
-                    <div class="bg-primary text-center p-5">
-                        <h1 class="text-white font-weight-bold">Subscribe My Newsletter</h1>
-                        <p class="text-white">Subscribe and get my latest article in your inbox</p>
-                        <form class="form-inline justify-content-center">
-                            <div class="input-group">
-                                <input type="text" class="form-control border-0 p-4" placeholder="Your Email">
-                                <div class="input-group-append">
-                                    <button class="btn btn-dark px-4" type="submit">Subscribe</button>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-                <!-- Subscribe End -->
+    <!-- Skills Section -->
+    <section id="skills" class="px-6 md:px-32 py-20 fade-in fade-delay-2">
+      <h2 class="text-4xl font-bold text-center text-indigo-400 mb-12">Skills</h2>
+      <div class="grid grid-cols-2 md:grid-cols-3 gap-8 text-center">
+        <div class="glass p-6 rounded-xl hover:scale-105 transform transition">React</div>
+        <div class="glass p-6 rounded-xl hover:scale-105 transform transition">Node.js</div>
+        <div class="glass p-6 rounded-xl hover:scale-105 transform transition">MySQL</div>
+        <div class="glass p-6 rounded-xl hover:scale-105 transform transition">Angular</div>
+        <div class="glass p-6 rounded-xl hover:scale-105 transform transition">AWS</div>
+        <div class="glass p-6 rounded-xl hover:scale-105 transform transition">REST APIs</div>
+      </div>
+    </section>
 
-
-                <!-- Services Start -->
-                <div class="container bg-white pt-5 pb-3">
-                    <div class="row px-3">
-                        <div class="col-12">
-                            <h2 class="title position-relative pb-2 mb-4">Services</h2>
-                        </div>
-                        <div class="col-md-6 service-item text-center mb-3">
-                            <i class="fa fa-2x fa-laptop-code mx-auto mb-4"></i>
-                            <h5 class="mb-2">Web Design</h5>
-                            <p>Justo sit justo eos amet tempor amet clita amet ipsum eos elitr. Amet lorem lorem lorem est amet labore</p>
-                        </div>
-                        <div class="col-md-6 service-item text-center mb-3">
-                            <i class="fab fa-2x fa-android mx-auto mb-4"></i>
-                            <h5 class="mb-2">Apps Development</h5>
-                            <p>Justo sit justo eos amet tempor amet clita amet ipsum eos elitr. Amet lorem lorem lorem est amet labore</p>
-                        </div>
-                        <div class="col-md-6 service-item text-center mb-3">
-                            <i class="fa fa-2x fa-search mx-auto mb-4"></i>
-                            <h5 class="mb-2">SEO</h5>
-                            <p>Justo sit justo eos amet tempor amet clita amet ipsum eos elitr. Amet lorem lorem lorem est amet labore</p>
-                        </div>
-                        <div class="col-md-6 service-item text-center mb-3">
-                            <i class="fa fa-2x fa-edit mx-auto mb-4"></i>
-                            <h5 class="mb-2">Content Creating</h5>
-                            <p>Justo sit justo eos amet tempor amet clita amet ipsum eos elitr. Amet lorem lorem lorem est amet labore</p>
-                        </div>
-                    </div>
-                </div>
-                <!-- Services End -->
-
-
-                <!-- Portfolio Start -->
-                <div class="container bg-white pt-5 pb-3">
-                    <div class="row px-3">
-                        <div class="col-12">
-                            <h2 class="title position-relative pb-2 mb-4">Portfolio</h2>
-                        </div>
-                        <div class="col-12">
-                            <div class="row">
-                                <div class="col-12 text-center mb-2">
-                                    <ul class="list-inline mb-4" id="portfolio-flters">
-                                        <li class="btn btn-outline-primary active"  data-filter="*"><i class="fa fa-star mr-2"></i>All</li>
-                                        <li class="btn btn-outline-primary" data-filter=".first"><i class="fa fa-laptop-code mr-2"></i>Design</li>
-                                        <li class="btn btn-outline-primary" data-filter=".second"><i class="fa fa-mobile-alt mr-2"></i>Development</li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="row portfolio-container">
-                                <div class="col-md-6 mb-4 portfolio-item first">
-                                    <div class="position-relative overflow-hidden mb-2">
-                                        <img class="img-fluid w-100" src="img/portfolio-1.jpg" alt="">
-                                        <div class="portfolio-btn d-flex align-items-center justify-content-center">
-                                            <a href="img/portfolio-1.jpg" data-lightbox="portfolio">
-                                                <i class="fa fa-4x fa-plus text-white"></i>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-6 mb-4 portfolio-item second">
-                                    <div class="position-relative overflow-hidden mb-2">
-                                        <img class="img-fluid w-100" src="img/portfolio-2.jpg" alt="">
-                                        <div class="portfolio-btn d-flex align-items-center justify-content-center">
-                                            <a href="img/portfolio-2.jpg" data-lightbox="portfolio">
-                                                <i class="fa fa-4x fa-plus text-white"></i>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-6 mb-4 portfolio-item first">
-                                    <div class="position-relative overflow-hidden mb-2">
-                                        <img class="img-fluid w-100" src="img/portfolio-3.jpg" alt="">
-                                        <div class="portfolio-btn d-flex align-items-center justify-content-center">
-                                            <a href="img/portfolio-3.jpg" data-lightbox="portfolio">
-                                                <i class="fa fa-4x fa-plus text-white"></i>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-6 mb-4 portfolio-item second">
-                                    <div class="position-relative overflow-hidden mb-2">
-                                        <img class="img-fluid w-100" src="img/portfolio-4.jpg" alt="">
-                                        <div class="portfolio-btn d-flex align-items-center justify-content-center">
-                                            <a href="img/portfolio-4.jpg" data-lightbox="portfolio">
-                                                <i class="fa fa-4x fa-plus text-white"></i>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Portfolio End -->
-
-
-                <!-- Testimonial Start -->
-                <div class="container bg-white py-5">
-                    <div class="row px-3">
-                        <div class="col-12">
-                            <h2 class="title position-relative pb-2 mb-4">Testimonial</h2>
-                        </div>
-                        <div class="col-12">
-                            <div class="owl-carousel testimonial-carousel">
-                                <div class="text-left">
-                                    <i class="fa fa-3x fa-quote-left text-primary mb-4"></i>
-                                    <h4 class="text-body mb-4">Dolor eirmod diam stet kasd sed. Aliqu rebum est eos. Rebum elitr dolore et eos labore, stet justo sed est sed. Diam sed sed dolor stet accusam amet eirmod eos, labore diam clita</h4>
-                                    <div class="d-flex align-items-center">
-                                        <img class="img-fluid" src="img/testimonial-1.jpg" style="width: 60px; height: 60px;">
-                                        <div class="pl-3">
-                                            <h5 class="text-primary m-0">Client Name</h5>
-                                            <i>Profession</i>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="text-left">
-                                    <i class="fa fa-3x fa-quote-left text-primary mb-4"></i>
-                                    <h4 class="text-body mb-4">Dolor eirmod diam stet kasd sed. Aliqu rebum est eos. Rebum elitr dolore et eos labore, stet justo sed est sed. Diam sed sed dolor stet accusam amet eirmod eos, labore diam clita</h4>
-                                    <div class="d-flex align-items-center">
-                                        <img class="img-fluid" src="img/testimonial-2.jpg" style="width: 60px; height: 60px;">
-                                        <div class="pl-3">
-                                            <h5 class="text-primary m-0">Client Name</h5>
-                                            <i>Profession</i>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="text-left">
-                                    <i class="fa fa-3x fa-quote-left text-primary mb-4"></i>
-                                    <h4 class="text-body mb-4">Dolor eirmod diam stet kasd sed. Aliqu rebum est eos. Rebum elitr dolore et eos labore, stet justo sed est sed. Diam sed sed dolor stet accusam amet eirmod eos, labore diam clita</h4>
-                                    <div class="d-flex align-items-center">
-                                        <img class="img-fluid" src="img/testimonial-3.jpg" style="width: 60px; height: 60px;">
-                                        <div class="pl-3">
-                                            <h5 class="text-primary m-0">Client Name</h5>
-                                            <i>Profession</i>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Testimonial End -->
-
-
-                <!-- Contact Start -->
-                <div class="container bg-white py-5" id="contact">
-                    <div class="row px-3">
-                        <div class="col-12">
-                            <h2 class="title position-relative pb-2 mb-4">Contact Me</h2>
-                        </div>
-                        <div class="col-12">
-                            <div class="contact-form">
-                                <div id="success"></div>
-                                <form name="sentMessage" id="contactForm" novalidate="novalidate">
-                                    <div class="form-row">
-                                        <div class="control-group col-sm-6">
-                                            <input type="text" class="form-control p-4" id="name" placeholder="Your Name"
-                                                required="required" data-validation-required-message="Please enter your name" />
-                                            <p class="help-block text-danger"></p>
-                                        </div>
-                                        <div class="control-group col-sm-6">
-                                            <input type="email" class="form-control p-4" id="email" placeholder="Your Email"
-                                                required="required" data-validation-required-message="Please enter your email" />
-                                            <p class="help-block text-danger"></p>
-                                        </div>
-                                    </div>
-                                    <div class="control-group">
-                                        <input type="text" class="form-control p-4" id="subject" placeholder="Subject"
-                                            required="required" data-validation-required-message="Please enter a subject" />
-                                        <p class="help-block text-danger"></p>
-                                    </div>
-                                    <div class="control-group">
-                                        <textarea class="form-control py-3 px-4" rows="5" id="message" placeholder="Message"
-                                            required="required"
-                                            data-validation-required-message="Please enter your message"></textarea>
-                                        <p class="help-block text-danger"></p>
-                                    </div>
-                                    <div>
-                                        <button class="btn btn-primary py-3 px-4" type="submit" id="sendMessageButton">Send Message</button>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Contact End -->
-                
-                
-                <!-- Footer Start -->
-                <div class="container-fluid bg-white pt-5 px-0">
-                    <div class="container bg-dark text-light text-center py-5">
-                        <div class="d-flex justify-content-center mb-4">
-                            <a class="btn btn-outline-primary btn-square mr-2" href="#"><i class="fab fa-twitter"></i></a>
-                            <a class="btn btn-outline-primary btn-square mr-2" href="#"><i class="fab fa-facebook-f"></i></a>
-                            <a class="btn btn-outline-primary btn-square mr-2" href="#"><i class="fab fa-linkedin-in"></i></a>
-                            <a class="btn btn-outline-primary btn-square" href="#"><i class="fab fa-instagram"></i></a>
-                        </div>
-                        <div class="d-flex justify-content-center mb-3">
-                            <a class="text-white" href="#">Privacy</a>
-                            <span class="px-3">|</span>
-                            <a class="text-white" href="#">Terms</a>
-                            <span class="px-3">|</span>
-                            <a class="text-white" href="#">FAQs</a>
-                            <span class="px-3">|</span>
-                            <a class="text-white" href="#">Help</a>
-                        </div>
-                        <p class="m-0">&copy; All Rights Reserved. Designed by <a href="https://htmlcodex.com">HTML Codex</a></p>
-                    </div>
-                </div>
-                <!-- Footer End -->
-            </div>
+    
+    <!-- Projects Section -->
+    <!-- <section id="projects" class="px-6 md:px-32 py-20 fade-in fade-delay-3">
+      <h2 class="text-4xl font-bold text-center text-purple-400 mb-12">Projects</h2>
+      <div class="grid md:grid-cols-2 gap-10">
+        <div class="glass p-8 rounded-xl shadow-lg transform hover:scale-105 transition duration-300">
+          <h3 class="text-2xl font-semibold mb-3">Project One</h3>
+          <p class="text-gray-300 mb-4">
+            A feature-rich app using React, Node, and MySQL, focused on performance and UI/UX.
+          </p>
+          <a href="#" class="text-indigo-300 hover:underline">View on GitHub</a>
         </div>
-        
-        <!-- Back to Top -->
-        <a href="#" class="back-to-top"><i class="fa fa-angle-double-up"></i></a>
-        
-        <!-- JavaScript Libraries -->
-        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
-        <script src="lib/typed/typed.min.js"></script>
-        <script src="lib/easing/easing.min.js"></script>
-        <script src="lib/waypoints/waypoints.min.js"></script>
-        <script src="lib/owlcarousel/owl.carousel.min.js"></script>
-        <script src="lib/isotope/isotope.pkgd.min.js"></script>
-        <script src="lib/lightbox/js/lightbox.min.js"></script>
+        <div class="glass p-8 rounded-xl shadow-lg transform hover:scale-105 transition duration-300">
+          <h3 class="text-2xl font-semibold mb-3">Project Two</h3>
+          <p class="text-gray-300 mb-4">
+            A serverless Angular + AWS app demonstrating cloud-native architecture.
+          </p>
+          <a href="#" class="text-purple-300 hover:underline">Live Demo</a>
+        </div>
+      </div>
+    </section> -->
 
-        <!-- Contact Javascript File -->
-        <script src="mail/jqBootstrapValidation.min.js"></script>
-        <script src="mail/contact.js"></script>
+    <!-- Contact Section -->
+    <section id="contact" class="px-6 md:px-32 py-20 text-center fade-in fade-delay-3">
+      <div class="glass rounded-xl p-10">
+        <h2 class="text-4xl font-bold mb-4 text-indigo-400">Get in Touch</h2>
+        <p class="text-gray-300 mb-4 text-lg">Email: jethikrunal@gmail.com</p>
+        <a href="https://www.linkedin.com/in/krunal-jethi-069139148/" class="text-indigo-300 hover:underline">LinkedIn Profile</a>
+        <!-- <a href="https://github.com/yourgithub" class="text-indigo-300 hover:underline">GitHub Profile</a> -->
+      </div>
+    </section>
+  </div>
 
-        <!-- Template Javascript -->
-        <script src="js/main.js"></script>
-    </body>
+  <!-- Scroll to Top Button -->
+  <button onclick="window.scrollTo({ top: 0, behavior: 'smooth' });" class="scroll-to-top">↑ Top</button>
+
+</body>
 </html>
