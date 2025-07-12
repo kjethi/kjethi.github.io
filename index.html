@@ -1,37 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Krunal Jethi | Full-Stack Developer</title>
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
   <style>
     html {
       scroll-behavior: smooth;
     }
+
     body {
       background: linear-gradient(135deg, #111827, #1f2937);
       color: #e5e7eb;
     }
+
     .fade-in {
       opacity: 0;
       transform: translateY(20px);
       animation: fadeInUp 1s forwards;
     }
+
     @keyframes fadeInUp {
       to {
         opacity: 1;
         transform: translateY(0);
       }
     }
-    .fade-delay-1 { animation-delay: 0.3s; }
-    .fade-delay-2 { animation-delay: 0.6s; }
-    .fade-delay-3 { animation-delay: 0.9s; }
+
+    .fade-delay-1 {
+      animation-delay: 0.3s;
+    }
+
+    .fade-delay-2 {
+      animation-delay: 0.6s;
+    }
+
+    .fade-delay-3 {
+      animation-delay: 0.9s;
+    }
+
     .glass {
       background: rgba(31, 41, 55, 0.8);
       border: 1px solid rgba(255, 255, 255, 0.1);
       backdrop-filter: blur(12px);
     }
+
     .scroll-to-top {
       position: fixed;
       bottom: 20px;
@@ -44,6 +61,7 @@
       box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
       cursor: pointer;
     }
+
     .hero-landing {
       background: linear-gradient(to bottom right, #1e293b, #111827);
     }
@@ -51,91 +69,125 @@
   <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
 
 </head>
+
 <body class="text-gray-200 font-sans">
 
   <!-- Navbar -->
-  <nav x-data="{ open: false }" class="fixed top-0 left-0 w-full bg-gray-900 shadow z-50 py-4 px-6 md:px-12 flex justify-between items-center">
+  <nav x-data="{ open: false }"
+    class="fixed top-0 left-0 w-full bg-gray-900 shadow z-50 py-4 px-6 md:px-12 flex justify-between items-center">
     <h1 class="text-xl font-bold text-indigo-400">Krunal Jethi</h1>
-  
+
     <!-- Desktop Menu -->
     <ul class="hidden md:flex space-x-6 font-medium text-gray-300">
       <li><a href="#about" class="hover:text-indigo-300 transition duration-300">About</a></li>
       <li><a href="#skills" class="hover:text-indigo-300 transition duration-300">Skills</a></li>
       <li><a href="#projects" class="hover:text-indigo-300 transition duration-300">Projects</a></li>
       <li><a href="#contact" class="hover:text-indigo-300 transition duration-300">Contact</a></li>
-      <li><a href="assets/KrunalCV-AWSCertified.pdf" class="bg-indigo-500 text-white px-4 py-1 rounded hover:bg-indigo-600 transition duration-300">Resume</a></li>
+      <li><a href="assets/KrunalCV-AWSCertified.pdf"
+          class="bg-indigo-500 text-white px-4 py-1 rounded hover:bg-indigo-600 transition duration-300">Resume</a></li>
     </ul>
-  
+
     <!-- Mobile Button -->
     <button @click="open = !open" class="md:hidden text-gray-300 focus:outline-none">
       <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-              d="M4 6h16M4 12h16M4 18h16" />
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
       </svg>
     </button>
-  
+
     <!-- Mobile Menu -->
-    <ul x-show="open" @click.away="open = false" class="absolute top-full left-0 w-full bg-gray-800 flex flex-col space-y-4 py-6 px-6 md:hidden text-gray-200">
+    <ul x-show="open" @click.away="open = false"
+      class="absolute top-full left-0 w-full bg-gray-800 flex flex-col space-y-4 py-6 px-6 md:hidden text-gray-200">
       <li><a href="#about" class="hover:text-indigo-300 transition">About</a></li>
       <li><a href="#skills" class="hover:text-indigo-300 transition">Skills</a></li>
       <li><a href="#projects" class="hover:text-indigo-300 transition">Projects</a></li>
       <li><a href="#contact" class="hover:text-indigo-300 transition">Contact</a></li>
-      <li><a href="assets/KrunalCV-AWSCertified.pdf" class="bg-indigo-500 text-white px-4 py-1 rounded hover:bg-indigo-600 transition">Resume</a></li>
+      <li><a href="assets/KrunalCV-AWSCertified.pdf"
+          class="bg-indigo-500 text-white px-4 py-1 rounded hover:bg-indigo-600 transition">Resume</a></li>
     </ul>
   </nav>
 
   <div class="pt-24">
     <!-- Hero Section -->
     <section class="hero-landing py-32 px-6 text-center fade-in">
-      <h1 class="text-6xl md:text-8xl font-extrabold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-indigo-400 to-purple-500">Krunal Jethi</h1>
+      <h1
+        class="text-6xl md:text-8xl font-extrabold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-indigo-400 to-purple-500">
+        Krunal Jethi</h1>
       <p class="text-2xl md:text-3xl text-gray-300 mb-4">Full-Stack Developer</p>
       <p class="text-lg text-gray-400 mb-8">React • Node.js • MySQL • Angular • AWS</p>
       <div class="flex justify-center gap-4 text-4xl">
-        <span class="animate-bounce">⚛️</span>
-        <span class="animate-bounce delay-100">🌿</span>
-        <span class="animate-bounce delay-200">🛢️</span>
-        <span class="animate-bounce delay-300">🅰️</span>
-        <span class="animate-bounce delay-400">☁️</span>
+        <span class="animate-bounce"><i class="fab fa-react text-4xl text-blue-400 animate-bounce"></i></span>
+        <span class="animate-bounce delay-100"><i class="fab fa-node-js text-4xl text-green-400 animate-bounce "></i></span>
+        <span class="animate-bounce delay-200"><i class="fas fa-database text-4xl text-orange-400 animate-bounce"></i></span>
+        <span class="animate-bounce delay-300"> <i class="fab fa-angular text-4xl text-red-500 animate-bounce"></i></span>
+        <span class="animate-bounce delay-400"><i class="fab fa-aws text-4xl text-yellow-400 animate-bounce"></i></span>
       </div>
     </section>
 
-<!-- About Section -->
-<section id="about" class="px-6 md:px-24 py-24 bg-gray-900 text-gray-100">
-  <div class="bg-gray-800 bg-opacity-90 rounded-3xl shadow-2xl p-12 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-    <div class="flex justify-center">
-      <img src="img/profile.jpeg" alt="Krunal Jethi" class="w-56 h-56 rounded-full object-cover border-4 border-indigo-500 shadow-xl" />
-    </div>
-    <div>
-      <h2 class="text-5xl font-bold text-indigo-400 mb-6">About Me <span class='text-base text-gray-400'>(9+ years of experience)</span></h2>
-      <p class="text-lg text-gray-300 leading-relaxed mb-4">
-        I'm <span class="text-indigo-300 font-semibold">Krunal Jethi</span>, a passionate and experienced Full-Stack Developer with over 9 years of industry expertise. I specialize in building scalable and high-performance web applications using technologies like <strong>React</strong>, <strong>Node.js</strong>, <strong>MySQL</strong>, and <strong>Angular</strong>. My role often involves acting as a <strong>Solution Architect</strong>, designing robust system architectures that meet real-world business needs.
-      </p>
-      <p class="text-lg text-gray-400 leading-relaxed mb-6">
-        I recently earned my <span class="text-green-400 font-semibold">AWS Certified Developer – Associate</span> certification, enhancing my ability to create and deploy cloud-native applications. With a deep understanding of both frontend and backend technologies, I thrive in delivering clean, user-focused solutions that scale efficiently and perform reliably.
-      </p>
-      <div class="flex items-center space-x-4">
-        <img src="aws-certified.png" alt="AWS Certified Badge" class="w-14 h-14" />
-        <span class="text-sm text-green-400 font-semibold">AWS Certified Developer – Associate</span>
+    <!-- About Section -->
+    <section id="about" class="px-6 md:px-24 py-24 bg-gray-900 text-gray-100">
+      <div
+        class="bg-gray-800 bg-opacity-90 rounded-3xl shadow-2xl p-12 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+        <div class="flex justify-center">
+          <img src="img/profile.jpeg" alt="Krunal Jethi"
+            class="w-56 h-56 rounded-full object-cover border-4 border-indigo-500 shadow-xl" />
+        </div>
+        <div>
+          <h2 class="text-5xl font-bold text-indigo-400 mb-6">About Me <span class='text-base text-gray-400'>(9+ years
+              of experience)</span></h2>
+          <p class="text-lg text-gray-300 leading-relaxed mb-4">
+            I'm <span class="text-indigo-300 font-semibold">Krunal Jethi</span>, a passionate and experienced Full-Stack
+            Developer with over 9 years of industry expertise. I specialize in building scalable and high-performance
+            web applications using technologies like <strong>React</strong>, <strong>Node.js</strong>,
+            <strong>MySQL</strong>, and <strong>Angular</strong>. My role often involves acting as a <strong>Solution
+              Architect</strong>, designing robust system architectures that meet real-world business needs.
+          </p>
+          <p class="text-lg text-gray-400 leading-relaxed mb-6">
+            I recently earned my <span class="text-green-400 font-semibold">AWS Certified Developer – Associate</span>
+            certification, enhancing my ability to create and deploy cloud-native applications. With a deep
+            understanding of both frontend and backend technologies, I thrive in delivering clean, user-focused
+            solutions that scale efficiently and perform reliably.
+          </p>
+          <div class="flex items-center space-x-4">
+            <img src="img/aws.jpeg" alt="AWS Certified Badge" class="w-14 h-14" />
+            <span class="text-sm text-green-400 font-semibold">AWS Certified Developer – Associate</span>
+          </div>
+        </div>
       </div>
+    </section>
+
+
+  <!-- Skills Section -->
+<section id="skills" class="px-6 md:px-32 py-20 fade-in fade-delay-2 bg-gray-900 text-gray-100">
+  <h2 class="text-4xl font-bold text-center text-indigo-400 mb-12">Skills</h2>
+  <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+    <div class="glass p-6 rounded-xl hover:scale-105 hover:bg-indigo-800 hover:text-white transform transition duration-300">
+      <i class="fab fa-react text-4xl text-blue-400 animate-bounce"></i>
+      <p class="mt-2">React</p>
+    </div>
+    <div class="glass p-6 rounded-xl hover:scale-105 transform transition">
+      <i class="fab fa-node-js text-4xl text-green-400 animate-bounce delay-100"></i>
+      <p class="mt-2">Node.js</p>
+    </div>
+    <div class="glass p-6 rounded-xl hover:scale-105 transform transition">
+      <i class="fas fa-database text-4xl text-orange-400 animate-bounce delay-200"></i>
+      <p class="mt-2">MySQL</p>
+    </div>
+    <div class="glass p-6 rounded-xl hover:scale-105 transform transition">
+      <i class="fab fa-angular text-4xl text-red-500 animate-bounce delay-300"></i>
+      <p class="mt-2">Angular</p>
+    </div>
+    <div class="glass p-6 rounded-xl hover:scale-105 transform transition">
+      <i class="fab fa-aws text-4xl text-yellow-400 animate-bounce"></i>
+      <p class="mt-2">AWS</p>
+    </div>
+    <div class="glass p-6 rounded-xl hover:scale-105 transform transition">
+      <i class="fas fa-plug text-4xl text-purple-400 animate-bounce delay-400"></i>
+      <p class="mt-2">REST APIs</p>
     </div>
   </div>
 </section>
 
 
-    <!-- Skills Section -->
-    <section id="skills" class="px-6 md:px-32 py-20 fade-in fade-delay-2">
-      <h2 class="text-4xl font-bold text-center text-indigo-400 mb-12">Skills</h2>
-      <div class="grid grid-cols-2 md:grid-cols-3 gap-8 text-center">
-        <div class="glass p-6 rounded-xl hover:scale-105 transform transition">React</div>
-        <div class="glass p-6 rounded-xl hover:scale-105 transform transition">Node.js</div>
-        <div class="glass p-6 rounded-xl hover:scale-105 transform transition">MySQL</div>
-        <div class="glass p-6 rounded-xl hover:scale-105 transform transition">Angular</div>
-        <div class="glass p-6 rounded-xl hover:scale-105 transform transition">AWS</div>
-        <div class="glass p-6 rounded-xl hover:scale-105 transform transition">REST APIs</div>
-      </div>
-    </section>
-
-    
     <!-- Projects Section -->
     <!-- <section id="projects" class="px-6 md:px-32 py-20 fade-in fade-delay-3">
       <h2 class="text-4xl font-bold text-center text-purple-400 mb-12">Projects</h2>
@@ -157,19 +209,40 @@
       </div>
     </section> -->
 
-    <!-- Contact Section -->
-    <section id="contact" class="px-6 md:px-32 py-20 text-center fade-in fade-delay-3">
-      <div class="glass rounded-xl p-10">
-        <h2 class="text-4xl font-bold mb-4 text-indigo-400">Get in Touch</h2>
-        <p class="text-gray-300 mb-4 text-lg">Email: jethikrunal@gmail.com</p>
-        <a href="https://www.linkedin.com/in/krunal-jethi-069139148/" class="text-indigo-300 hover:underline">LinkedIn Profile</a>
-        <!-- <a href="https://github.com/yourgithub" class="text-indigo-300 hover:underline">GitHub Profile</a> -->
-      </div>
-    </section>
+<!-- Get in Touch Section -->
+<section id="contact" class="px-6 md:px-24 py-24 bg-gradient-to-br from-indigo-900 via-gray-900 to-indigo-900 text-white">
+  <div class="rounded-3xl shadow-2xl bg-gray-800 bg-opacity-90 p-12 max-w-4xl mx-auto text-center">
+    <h2 class="text-5xl font-bold text-indigo-400 mb-8">Contact Me</h2>
+    <p class="text-lg text-gray-300 mb-10">Feel free to reach out for collaborations, questions, or just a friendly hello!</p>
+    <form class="grid grid-cols-1 gap-6">
+      <input type="text" placeholder="Your Name" class="p-4 rounded-lg bg-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-indigo-400 placeholder:text-gray-400" />
+      <input type="email" placeholder="Your Email" class="p-4 rounded-lg bg-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-indigo-400 placeholder:text-gray-400" />
+      <textarea rows="4" placeholder="Your Message" class="p-4 rounded-lg bg-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-indigo-400 placeholder:text-gray-400"></textarea>
+      <button type="submit" class="bg-indigo-500 hover:bg-indigo-600 text-white py-3 rounded-lg font-semibold transition transform hover:scale-105 duration-300 shadow-md">Send Message</button>
+    </form>
+    <div class="mt-10 flex justify-center space-x-6">
+  <a href="mailto:jethikrunal@gmail.com" class="text-gray-400 hover:text-indigo-400 transition duration-300" title="Email">
+    <i class="fas fa-envelope text-2xl"></i>
+  </a>
+  <a href="tel:+918320764018" class="text-gray-400 hover:text-indigo-400 transition duration-300" title="Call">
+    <i class="fas fa-phone-alt text-2xl"></i>
+  </a>
+  <a href="https://www.linkedin.com/in/krunal-jethi-069139148/" target="_blank" class="text-gray-400 hover:text-indigo-400 transition duration-300" title="LinkedIn">
+    <i class="fab fa-linkedin text-2xl"></i>
+  </a>
+  <a href="https://github.com/kjethi" target="_blank" class="text-gray-400 hover:text-indigo-400 transition duration-300" title="GitHub">
+    <i class="fab fa-github text-2xl"></i>
+  </a>
+  <a href="https://stackoverflow.com/users/16315413/krunal-jethi" target="_blank" class="text-gray-400 hover:text-indigo-400 transition duration-300" title="Stack Overflow">
+    <i class="fab fa-stack-overflow text-2xl"></i>
+  </a>
+</div>
   </div>
+</section>
 
   <!-- Scroll to Top Button -->
   <button onclick="window.scrollTo({ top: 0, behavior: 'smooth' });" class="scroll-to-top">↑ Top</button>
 
 </body>
+
 </html>
