@@ -116,9 +116,12 @@
       <p class="text-lg text-gray-400 mb-8">React • Node.js • MySQL • Angular • AWS</p>
       <div class="flex justify-center gap-4 text-4xl">
         <span class="animate-bounce"><i class="fab fa-react text-4xl text-blue-400 animate-bounce"></i></span>
-        <span class="animate-bounce delay-100"><i class="fab fa-node-js text-4xl text-green-400 animate-bounce "></i></span>
-        <span class="animate-bounce delay-200"><i class="fas fa-database text-4xl text-orange-400 animate-bounce"></i></span>
-        <span class="animate-bounce delay-300"> <i class="fab fa-angular text-4xl text-red-500 animate-bounce"></i></span>
+        <span class="animate-bounce delay-100"><i
+            class="fab fa-node-js text-4xl text-green-400 animate-bounce "></i></span>
+        <span class="animate-bounce delay-200"><i
+            class="fas fa-database text-4xl text-orange-400 animate-bounce"></i></span>
+        <span class="animate-bounce delay-300"> <i
+            class="fab fa-angular text-4xl text-red-500 animate-bounce"></i></span>
         <span class="animate-bounce delay-400"><i class="fab fa-aws text-4xl text-yellow-400 animate-bounce"></i></span>
       </div>
     </section>
@@ -156,117 +159,194 @@
     </section>
 
 
-  <!-- Skills Section -->
-<section id="skills" class="px-6 md:px-32 py-20 fade-in fade-delay-2 bg-gray-900 text-gray-100">
-  <h2 class="text-4xl font-bold text-center text-indigo-400 mb-12">Skills</h2>
-  <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-    <div class="glass p-6 rounded-xl hover:scale-105 hover:bg-indigo-800 hover:text-white transform transition duration-300">
-      <i class="fab fa-react text-4xl text-blue-400 animate-bounce"></i>
-      <p class="mt-2">React</p>
-    </div>
-    <div class="glass p-6 rounded-xl hover:scale-105 transform transition">
-      <i class="fab fa-node-js text-4xl text-green-400 animate-bounce delay-100"></i>
-      <p class="mt-2">Node.js</p>
-    </div>
-    <div class="glass p-6 rounded-xl hover:scale-105 transform transition">
-      <i class="fas fa-database text-4xl text-orange-400 animate-bounce delay-200"></i>
-      <p class="mt-2">MySQL</p>
-    </div>
-    <div class="glass p-6 rounded-xl hover:scale-105 transform transition">
-      <i class="fab fa-angular text-4xl text-red-500 animate-bounce delay-300"></i>
-      <p class="mt-2">Angular</p>
-    </div>
-    <div class="glass p-6 rounded-xl hover:scale-105 transform transition">
-      <i class="fab fa-aws text-4xl text-yellow-400 animate-bounce"></i>
-      <p class="mt-2">AWS</p>
-    </div>
-    <div class="glass p-6 rounded-xl hover:scale-105 transform transition">
-      <i class="fas fa-plug text-4xl text-purple-400 animate-bounce delay-400"></i>
-      <p class="mt-2">REST APIs</p>
-    </div>
-  </div>
-</section>
+    <!-- Skills Section -->
+    <section id="skills" class="px-6 md:px-32 py-20 fade-in fade-delay-2 bg-gray-900 text-gray-100">
+      <h2 class="text-4xl font-bold text-center text-indigo-400 mb-12">Skills</h2>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+        <div
+          class="glass p-6 rounded-xl hover:scale-105 hover:bg-indigo-800 hover:text-white transform transition duration-300">
+          <i class="fab fa-react text-4xl text-blue-400 animate-bounce"></i>
+          <p class="mt-2">React</p>
+        </div>
+        <div class="glass p-6 rounded-xl hover:scale-105 transform transition">
+          <i class="fab fa-node-js text-4xl text-green-400 animate-bounce delay-100"></i>
+          <p class="mt-2">Node.js</p>
+        </div>
+        <div class="glass p-6 rounded-xl hover:scale-105 transform transition">
+          <i class="fas fa-database text-4xl text-orange-400 animate-bounce delay-200"></i>
+          <p class="mt-2">MySQL</p>
+        </div>
+        <div class="glass p-6 rounded-xl hover:scale-105 transform transition">
+          <i class="fab fa-angular text-4xl text-red-500 animate-bounce delay-300"></i>
+          <p class="mt-2">Angular</p>
+        </div>
+        <div class="glass p-6 rounded-xl hover:scale-105 transform transition">
+          <i class="fab fa-aws text-4xl text-yellow-400 animate-bounce"></i>
+          <p class="mt-2">AWS</p>
+        </div>
+        <div class="glass p-6 rounded-xl hover:scale-105 transform transition">
+          <i class="fas fa-plug text-4xl text-purple-400 animate-bounce delay-400"></i>
+          <p class="mt-2">REST APIs</p>
+        </div>
+      </div>
+    </section>
 
-<!-- Projects Section with Filtering -->
-<section id="projects" class="px-6 md:px-32 py-24 bg-gray-900 text-gray-100" x-data="{ filter: 'All' }">
-  <h2 class="text-4xl font-bold text-center text-purple-400 mb-12">Projects</h2>
+    <!-- Projects Section with Filtering -->
+    <section id="projects" class="px-6 md:px-32 py-24 bg-gray-900 text-gray-100" x-data="{ filter: 'All' }">
+      <h2 class="text-4xl font-bold text-center text-purple-400 mb-12">Projects</h2>
 
-  <!-- Filter Buttons -->
-  <div class="flex flex-wrap justify-center mb-10 gap-4">
-    <button @click="filter = 'All'" :class="filter === 'All' ? 'bg-purple-600 text-white' : 'bg-gray-700 text-gray-300'" class="px-4 py-2 rounded-lg">All</button>
-    <button @click="filter = 'React'" :class="filter === 'React' ? 'bg-purple-600 text-white' : 'bg-gray-700 text-gray-300'" class="px-4 py-2 rounded-lg">React</button>
-    <button @click="filter = 'AWS'" :class="filter === 'AWS' ? 'bg-purple-600 text-white' : 'bg-gray-700 text-gray-300'" class="px-4 py-2 rounded-lg">AWS</button>
-    <button @click="filter = 'Node.js'" :class="filter === 'Node.js' ? 'bg-purple-600 text-white' : 'bg-gray-700 text-gray-300'" class="px-4 py-2 rounded-lg">Node.js</button>
-    <button @click="filter = 'MongoDB'" :class="filter === 'MongoDB' ? 'bg-purple-600 text-white' : 'bg-gray-700 text-gray-300'" class="px-4 py-2 rounded-lg">MongoDB</button>
-  </div>
+      <!-- Filter Buttons -->
+      <div class="flex flex-wrap justify-center mb-10 gap-4">
+        <button @click="filter = 'All'"
+          :class="filter === 'All' ? 'bg-purple-600 text-white' : 'bg-gray-700 text-gray-300'"
+          class="px-4 py-2 rounded-lg">All</button>
+        <button @click="filter = 'React'"
+          :class="filter === 'React' ? 'bg-purple-600 text-white' : 'bg-gray-700 text-gray-300'"
+          class="px-4 py-2 rounded-lg">React / Next</button>
+        <button @click="filter = 'Node.js'"
+          :class="filter === 'Node.js' ? 'bg-purple-600 text-white' : 'bg-gray-700 text-gray-300'"
+          class="px-4 py-2 rounded-lg">Node.js</button>
+        <button @click="filter = 'AWS'"
+          :class="filter === 'AWS' ? 'bg-purple-600 text-white' : 'bg-gray-700 text-gray-300'"
+          class="px-4 py-2 rounded-lg">AWS Cloud</button>
+        <button @click="filter = 'Angular'"
+          :class="filter === 'Angular' ? 'bg-purple-600 text-white' : 'bg-gray-700 text-gray-300'"
+          class="px-4 py-2 rounded-lg">Angular</button>
+        <button @click="filter = 'PHP'"
+          :class="filter === 'PHP' ? 'bg-purple-600 text-white' : 'bg-gray-700 text-gray-300'"
+          class="px-4 py-2 rounded-lg">PHP</button>
+        <!-- <button @click="filter = 'MongoDB'"
+          :class="filter === 'MongoDB' ? 'bg-purple-600 text-white' : 'bg-gray-700 text-gray-300'"
+          class="px-4 py-2 rounded-lg">MongoDB</button> -->
+      </div>
 
-  <!-- Projects Grid -->
-  <div class="grid md:grid-cols-2 gap-10">
-    <!-- Project 1 -->
-    <div x-show="filter === 'All' || filter === 'AWS' || filter === 'Node.js'" class="glass p-6 rounded-xl shadow-xl transition hover:scale-105">
-      <img src="img/spolto-thumb.jpg" alt="Spolto" class="w-full h-48 object-cover rounded-lg mb-4" />
-      <h3 class="text-2xl font-semibold text-indigo-300 mb-2">Spolto - Sports Event Platform</h3>
-      <p class="text-gray-300 mb-3">Serverless event management using AWS Lambda, API Gateway, and DynamoDB.</p>
-      <div class="flex flex-wrap gap-2 mb-4">
-        <span class="text-sm bg-indigo-600 px-2 py-1 rounded">AWS</span>
-        <span class="text-sm bg-green-600 px-2 py-1 rounded">Node.js</span>
-        <span class="text-sm bg-yellow-500 px-2 py-1 rounded">DynamoDB</span>
-      </div>
-      <div class="flex justify-between">
-        <a href="https://github.com/kjethi/spolto-api" target="_blank" class="text-indigo-400 hover:underline">GitHub</a>
-        <a href="https://spolto-demo.vercel.app" target="_blank" class="text-purple-400 hover:underline">Live Demo</a>
-      </div>
-    </div>
+      <!-- Projects Grid -->
+      <div class="grid md:grid-cols-2 gap-10">
+        <!-- Project 1 -->
+        <div x-show="filter === 'All' || filter === 'React' || filter === 'AWS' || filter === 'Node.js'"
+          class="glass p-6 rounded-xl shadow-xl transition hover:scale-105">
+          <img src="assets/projects/spolto-thumb.jpeg" alt="Spolto" class="w-full h-48 object-cover rounded-lg mb-4" />
+          <h3 class="text-2xl font-semibold text-indigo-300 mb-2">Spolto - Sports Event Platform</h3>
+          <p class="text-sm text-gray-400 italic mb-2">Duration: 3 months</p>
+          <p class="text-gray-300 mb-3">An end-to-end sports management platform designed to streamline event
+            organization, player registration, and scheduling. As a full-stack developer, I built scalable backend APIs
+            using AWS SAM (Serverless Application Model) and developed dynamic, SEO-friendly web interfaces with
+            Next.js. The architecture ensured high performance, secure user authentication, and seamless integration
+            with AWS services like SAM CLI, CI/CD, Lambda, and API Gateway.</p>
+          <div class="flex flex-wrap gap-2 mb-4">
+            <span class="text-sm bg-blue-600 px-2 py-1 rounded">Next.js</span>
+            <span class="text-sm bg-green-600 px-2 py-1 rounded">Node.js</span>
+            <span class="text-sm bg-red-600 px-2 py-1 rounded">AWS Cloud</span>
+            <span class="text-sm bg-red-400 px-2 py-1 rounded">AWS SAM</span>
+            <span class="text-sm bg-purple-600 px-2 py-1 rounded">MySQL</span>
+          </div>
+          <div class="flex justify-end">
+            <a href="https://spolto.com/" target="_blank" class="text-purple-400 hover:underline">Live Demo</a>
+          </div>
+        </div>
 
-    <!-- Project 2 -->
-    <div x-show="filter === 'All' || filter === 'React' || filter === 'Node.js' || filter === 'MongoDB'" class="glass p-6 rounded-xl shadow-xl transition hover:scale-105">
-      <img src="img/jobboard-thumb.jpg" alt="Job Board" class="w-full h-48 object-cover rounded-lg mb-4" />
-      <h3 class="text-2xl font-semibold text-indigo-300 mb-2">Job Board - MERN Stack</h3>
-      <p class="text-gray-300 mb-3">Job application tracker built with MongoDB, Express, React, and Node.js.</p>
-      <div class="flex flex-wrap gap-2 mb-4">
-        <span class="text-sm bg-blue-600 px-2 py-1 rounded">React</span>
-        <span class="text-sm bg-green-600 px-2 py-1 rounded">Node.js</span>
-        <span class="text-sm bg-gray-600 px-2 py-1 rounded">MongoDB</span>
-      </div>
-      <div class="flex justify-between">
-        <a href="https://github.com/kjethi/job-board" target="_blank" class="text-indigo-400 hover:underline">GitHub</a>
-        <a href="https://jobboard-demo.vercel.app" target="_blank" class="text-purple-400 hover:underline">Live Demo</a>
-      </div>
-    </div>
+        <!-- Project 2 -->
+        <div x-show="filter === 'All' || filter === 'React' || filter === 'AWS'"
+          class="glass p-6 rounded-xl shadow-xl transition hover:scale-105">
+          <img src="assets/projects/levrx-thumb.png" alt="Job Board" class="w-full h-48 object-cover rounded-lg mb-4" />
+          <h3 class="text-2xl font-semibold text-indigo-300 mb-2">Levrx - React Developer</h3>
+          <p class="text-sm text-gray-400 italic mb-2">Duration: 3 Years</p>
+          <p class="text-gray-300 mb-3">A healthcare platform that helps users access transparent and affordable
+            prescription drug pricing. I developed responsive web and mobile app interfaces using modern frontend
+            technologies. Focused on seamless user experience, real-time data visualization, and integration with APIs
+            for pharmacy benefits, pricing, and eligibility—all while ensuring HIPAA-compliant design practices.</p>
+          <div class="flex flex-wrap gap-2 mb-4">
+            <span class="text-sm bg-blue-600 px-2 py-1 rounded">React</span>
+            <span class="text-sm bg-blue-400 px-2 py-1 rounded">React Native</span>
+            <span class="text-sm bg-red-600 px-2 py-1 rounded">AWS Cloud</span>
+            <span class="text-sm bg-gray-600 px-2 py-1 rounded">EXPO</span>
+          </div>
+        </div>
 
-    <!-- Project 3 -->
-    <div x-show="filter === 'All' || filter === 'AWS' || filter === 'React'" class="glass p-6 rounded-xl shadow-xl transition hover:scale-105">
-      <img src="img/chatapp-thumb.jpg" alt="Chat App" class="w-full h-48 object-cover rounded-lg mb-4" />
-      <h3 class="text-2xl font-semibold text-indigo-300 mb-2">AWS Serverless Chat App</h3>
-      <p class="text-gray-300 mb-3">Built using AppSync, Lambda, Cognito, and DynamoDB with React frontend.</p>
-      <div class="flex flex-wrap gap-2 mb-4">
-        <span class="text-sm bg-indigo-600 px-2 py-1 rounded">AWS</span>
-        <span class="text-sm bg-blue-600 px-2 py-1 rounded">React</span>
-        <span class="text-sm bg-yellow-500 px-2 py-1 rounded">AppSync</span>
-      </div>
-      <div class="flex justify-between">
-        <a href="https://github.com/kjethi/aws-chat-app" target="_blank" class="text-indigo-400 hover:underline">GitHub</a>
-        <a href="https://aws-chat-demo.vercel.app" target="_blank" class="text-purple-400 hover:underline">Live Demo</a>
-      </div>
-    </div>
+        <!-- Project 3 -->
+        <div x-show="filter === 'All' || filter === 'Angular'"
+          class="glass p-6 rounded-xl shadow-xl transition hover:scale-105">
+          <img src="assets/projects/WovvFlow-thumb.jpeg" alt="Chat App"
+            class="w-full h-48 object-cover rounded-lg mb-4" />
+          <h3 class="text-2xl font-semibold text-indigo-300 mb-2">WovvFlow (Workflow Automation)</h3>
+          <p class="text-sm text-gray-400 italic mb-2">Duration: 6 months</p>
+          <p class="text-gray-300 mb-3">A no-code/low-code workflow automation platform enabling businesses to digitize
+            and streamline their internal processes. As an Angular and MySQL developer, I built interactive, form-driven
+            user interfaces and managed complex backend logic using optimized SQL queries, stored procedures, and
+            relational schema design. Enabled dynamic workflow creation, conditional logic handling, and role-based
+            approvals to support configurable, enterprise-grade automation solutions.</p>
+          <div class="flex flex-wrap gap-2 mb-4">
+            <span class="text-sm bg-pink-600 px-2 py-1 rounded">Angular</span>
+            <span class="text-sm bg-purple-600 px-2 py-1 rounded">MySQL</span>
+          </div>
 
-    <!-- Project 4 -->
-    <div x-show="filter === 'All' || filter === 'React'" class="glass p-6 rounded-xl shadow-xl transition hover:scale-105">
-      <img src="img/dashboard-thumb.jpg" alt="Admin Dashboard" class="w-full h-48 object-cover rounded-lg mb-4" />
-      <h3 class="text-2xl font-semibold text-indigo-300 mb-2">Admin Dashboard</h3>
-      <p class="text-gray-300 mb-3">Reusable dashboard template with charts, dark mode, and responsive layout.</p>
-      <div class="flex flex-wrap gap-2 mb-4">
-        <span class="text-sm bg-blue-600 px-2 py-1 rounded">React</span>
-        <span class="text-sm bg-purple-600 px-2 py-1 rounded">TailwindCSS</span>
-        <span class="text-sm bg-pink-600 px-2 py-1 rounded">Chart.js</span>
+        </div>
+
+        <!-- Project 4 -->
+        <div x-show="filter === 'All' || filter === 'Node.js' || filter === 'Angular'"
+          class="glass p-6 rounded-xl shadow-xl transition hover:scale-105">
+          <img src="assets/projects/seagraph-thumb.jpg" alt="Admin Dashboard"
+            class="w-full h-48 object-cover rounded-lg mb-4" />
+          <h3 class="text-2xl font-semibold text-indigo-300 mb-2">Seagraph - Vessel Inspection-Vetting Analytics</h3>
+          <p class="text-sm text-gray-400 italic mb-2">Duration: 2 Years</p>
+          <p class="text-gray-300 mb-3">A comprehensive maritime analytics and inspection management platform designed
+            to streamline vetting and compliance processes. As part of the development team, I helped build a system to
+            extract and analyze data from inspection reports, including OCIMF (SIRE) files, enabling clients to gain
+            actionable insights. The platform allows users to monitor and plan vessel inspections, conduct training
+            programs, and track performance across fleets. Seagraphs simplified complex maritime operations, improved
+            SIRE inspection readiness, and provided real-time vetting analytics for proactive decision-making.</p>
+          <div class="flex flex-wrap gap-2 mb-4">
+            <span class="text-sm bg-green-600 px-2 py-1 rounded">Node.js</span>
+            <span class="text-sm bg-pink-600 px-2 py-1 rounded">Angular</span>
+            <span class="text-sm bg-pink-600 px-2 py-1 rounded">Chart.js</span>
+            <span class="text-sm bg-purple-600 px-2 py-1 rounded">MySQL</span>
+          </div>
+
+        </div>
+
+        <!-- Project 5 -->
+        <div x-show="filter === 'All' || filter === 'PHP'"
+          class="glass p-6 rounded-xl shadow-xl transition hover:scale-105">
+          <img src="assets/projects/aakronline-thumb.jpeg" alt="Admin Dashboard"
+            class="w-full h-48 object-cover rounded-lg mb-4" />
+          <h3 class="text-2xl font-semibold text-indigo-300 mb-2">Aakronline</h3>
+          <p class="text-sm text-gray-400 italic mb-2">Duration: 1 Year</p>
+          <p class="text-gray-300 mb-3">An e-commerce platform for the promotional products industry, allowing customers
+            to customize and order branded merchandise at scale. As a Full-Stack Developer, I worked on enhancing core
+            modules using PHP (Symfony framework), implemented dynamic and responsive user interfaces with Twig
+            templates and jQuery, and optimized product customization workflows. Contributed to features like dynamic
+            pricing, artwork uploads, order tracking, and inventory synchronization, ensuring a seamless and efficient
+            user experience for both end users and distributors.</p>
+          <div class="flex flex-wrap gap-2 mb-4">
+            <span class="text-sm bg-blue-600 px-2 py-1 rounded">PHP - Symfony</span>
+            <span class="text-sm bg-purple-600 px-2 py-1 rounded">JQuery</span>
+            <span class="text-sm bg-purple-600 px-2 py-1 rounded">MySQL</span>
+          </div>
+          <div class="flex justify-end">
+            <a href="https://www.aakronline.com/" target="_blank" class="text-purple-400 hover:underline">Live
+              Demo</a>
+          </div>
+        </div>
+
+        <!-- <div x-show="filter === 'All' || filter === 'React'"
+          class="glass p-6 rounded-xl shadow-xl transition hover:scale-105">
+          <img src="img/dashboard-thumb.jpg" alt="Admin Dashboard" class="w-full h-48 object-cover rounded-lg mb-4" />
+          <h3 class="text-2xl font-semibold text-indigo-300 mb-2">Admin Dashboard</h3>
+          <p class="text-gray-300 mb-3">Reusable dashboard template with charts, dark mode, and responsive layout.</p>
+          <div class="flex flex-wrap gap-2 mb-4">
+            <span class="text-sm bg-blue-600 px-2 py-1 rounded">React</span>
+            <span class="text-sm bg-purple-600 px-2 py-1 rounded">TailwindCSS</span>
+            <span class="text-sm bg-pink-600 px-2 py-1 rounded">Chart.js</span>
+          </div>
+          <div class="flex justify-between">
+            <a href="https://github.com/kjethi/react-dashboard" target="_blank"
+              class="text-indigo-400 hover:underline">GitHub</a>
+            <a href="https://react-dashboard-kj.vercel.app" target="_blank" class="text-purple-400 hover:underline">Live
+              Demo</a>
+          </div>
+        </div> -->
       </div>
-      <div class="flex justify-between">
-        <a href="https://github.com/kjethi/react-dashboard" target="_blank" class="text-indigo-400 hover:underline">GitHub</a>
-        <a href="https://react-dashboard-kj.vercel.app" target="_blank" class="text-purple-400 hover:underline">Live Demo</a>
-      </div>
-    </div>
-  </div>
-</section>
+    </section>
 
 
     <!-- Projects Section -->
@@ -290,39 +370,55 @@
       </div>
     </section> -->
 
-<!-- Get in Touch Section -->
-<section id="contact" class="px-6 md:px-24 py-24 bg-gradient-to-br from-indigo-900 via-gray-900 to-indigo-900 text-white">
-  <div class="rounded-3xl shadow-2xl bg-gray-800 bg-opacity-90 p-12 max-w-4xl mx-auto text-center">
-    <h2 class="text-5xl font-bold text-indigo-400 mb-8">Contact Me</h2>
-    <p class="text-lg text-gray-300 mb-10">Feel free to reach out for collaborations, questions, or just a friendly hello!</p>
-    <!-- <form class="grid grid-cols-1 gap-6">
+    <!-- Get in Touch Section -->
+    <section id="contact"
+      class="px-6 md:px-24 py-24 bg-gradient-to-br from-indigo-900 via-gray-900 to-indigo-900 text-white">
+      <div class="rounded-3xl shadow-2xl bg-gray-800 bg-opacity-90 p-12 max-w-4xl mx-auto text-center">
+        <h2 class="text-5xl font-bold text-indigo-400 mb-8">Contact Me</h2>
+        <p class="text-lg text-gray-300 mb-10">I'm always open to discussing new projects, freelance opportunities, or
+          anything tech-related. Feel free to reach out through the channels below:</p>
+        <!-- <form class="grid grid-cols-1 gap-6">
       <input type="text" placeholder="Your Name" class="p-4 rounded-lg bg-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-indigo-400 placeholder:text-gray-400" />
       <input type="email" placeholder="Your Email" class="p-4 rounded-lg bg-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-indigo-400 placeholder:text-gray-400" />
       <textarea rows="4" placeholder="Your Message" class="p-4 rounded-lg bg-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-indigo-400 placeholder:text-gray-400"></textarea>
       <button type="submit" class="bg-indigo-500 hover:bg-indigo-600 text-white py-3 rounded-lg font-semibold transition transform hover:scale-105 duration-300 shadow-md">Send Message</button>
     </form> -->
-    <div class="mt-10 flex justify-center space-x-6">
-  <a href="mailto:jethikrunal@gmail.com" class="text-gray-400 hover:text-indigo-400 transition duration-300" title="Email">
-    <i class="fas fa-envelope text-2xl"></i>
-  </a>
-  <a href="tel:+918320764018" class="text-gray-400 hover:text-indigo-400 transition duration-300" title="Call">
-    <i class="fas fa-phone-alt text-2xl"></i>
-  </a>
-  <a href="https://www.linkedin.com/in/krunal-jethi-069139148/" target="_blank" class="text-gray-400 hover:text-indigo-400 transition duration-300" title="LinkedIn">
-    <i class="fab fa-linkedin text-2xl"></i>
-  </a>
-  <a href="https://github.com/kjethi" target="_blank" class="text-gray-400 hover:text-indigo-400 transition duration-300" title="GitHub">
-    <i class="fab fa-github text-2xl"></i>
-  </a>
-  <a href="https://stackoverflow.com/users/16315413/krunal-jethi" target="_blank" class="text-gray-400 hover:text-indigo-400 transition duration-300" title="Stack Overflow">
-    <i class="fab fa-stack-overflow text-2xl"></i>
-  </a>
-</div>
-  </div>
-</section>
+        <div class="mt-10 flex justify-center space-x-6">
+          <ul class="space-y-4 text-lg">
+            <li>
+              📞 <strong>Phone:</strong>
+              <a href="tel:+918320764018" class="text-blue-400 hover:underline">+91 8320-764-018</a>
+            </li>
 
-  <!-- Scroll to Top Button -->
-  <button onclick="window.scrollTo({ top: 0, behavior: 'smooth' });" class="scroll-to-top">↑ Top</button>
+            <li>
+              📧 <strong>Email:</strong>
+              <a href="mailto:jethikrunal@gmail.com" class="text-blue-400 hover:underline">jethikrunal@gmail.com</a>
+            </li>
+            <li>
+              💼 <strong>LinkedIn:</strong>
+              <a href="https://www.linkedin.com/in/krunal-jethi-069139148/" target="_blank"
+                class="text-blue-400 hover:underline">https://www.linkedin.com/in/krunal-jethi-069139148</a>
+            </li>
+            <li>
+              🧑‍💻 <strong>GitHub:</strong>
+              <a href="https://github.com/kjethi" target="_blank"
+                class="text-blue-400 hover:underline">https://github.com/kjethi</a>
+            </li>
+            <li>
+              📊 <strong>Stack Overflow:</strong>
+              <a href="https://stackoverflow.com/users/16315413/krunal-jethi" target="_blank"
+                class="text-blue-400 hover:underline">https://stackoverflow.com/users/16315413/krunal-jethi</a>
+            </li>
+            <li>
+              🌐 <strong>Location:</strong> Vadodara, Gujarat, India
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Scroll to Top Button -->
+    <button onclick="window.scrollTo({ top: 0, behavior: 'smooth' });" class="scroll-to-top">↑ Top</button>
 
 </body>
 
