@@ -187,6 +187,87 @@
   </div>
 </section>
 
+<!-- Projects Section with Filtering -->
+<section id="projects" class="px-6 md:px-32 py-24 bg-gray-900 text-gray-100" x-data="{ filter: 'All' }">
+  <h2 class="text-4xl font-bold text-center text-purple-400 mb-12">Projects</h2>
+
+  <!-- Filter Buttons -->
+  <div class="flex flex-wrap justify-center mb-10 gap-4">
+    <button @click="filter = 'All'" :class="filter === 'All' ? 'bg-purple-600 text-white' : 'bg-gray-700 text-gray-300'" class="px-4 py-2 rounded-lg">All</button>
+    <button @click="filter = 'React'" :class="filter === 'React' ? 'bg-purple-600 text-white' : 'bg-gray-700 text-gray-300'" class="px-4 py-2 rounded-lg">React</button>
+    <button @click="filter = 'AWS'" :class="filter === 'AWS' ? 'bg-purple-600 text-white' : 'bg-gray-700 text-gray-300'" class="px-4 py-2 rounded-lg">AWS</button>
+    <button @click="filter = 'Node.js'" :class="filter === 'Node.js' ? 'bg-purple-600 text-white' : 'bg-gray-700 text-gray-300'" class="px-4 py-2 rounded-lg">Node.js</button>
+    <button @click="filter = 'MongoDB'" :class="filter === 'MongoDB' ? 'bg-purple-600 text-white' : 'bg-gray-700 text-gray-300'" class="px-4 py-2 rounded-lg">MongoDB</button>
+  </div>
+
+  <!-- Projects Grid -->
+  <div class="grid md:grid-cols-2 gap-10">
+    <!-- Project 1 -->
+    <div x-show="filter === 'All' || filter === 'AWS' || filter === 'Node.js'" class="glass p-6 rounded-xl shadow-xl transition hover:scale-105">
+      <img src="img/spolto-thumb.jpg" alt="Spolto" class="w-full h-48 object-cover rounded-lg mb-4" />
+      <h3 class="text-2xl font-semibold text-indigo-300 mb-2">Spolto - Sports Event Platform</h3>
+      <p class="text-gray-300 mb-3">Serverless event management using AWS Lambda, API Gateway, and DynamoDB.</p>
+      <div class="flex flex-wrap gap-2 mb-4">
+        <span class="text-sm bg-indigo-600 px-2 py-1 rounded">AWS</span>
+        <span class="text-sm bg-green-600 px-2 py-1 rounded">Node.js</span>
+        <span class="text-sm bg-yellow-500 px-2 py-1 rounded">DynamoDB</span>
+      </div>
+      <div class="flex justify-between">
+        <a href="https://github.com/kjethi/spolto-api" target="_blank" class="text-indigo-400 hover:underline">GitHub</a>
+        <a href="https://spolto-demo.vercel.app" target="_blank" class="text-purple-400 hover:underline">Live Demo</a>
+      </div>
+    </div>
+
+    <!-- Project 2 -->
+    <div x-show="filter === 'All' || filter === 'React' || filter === 'Node.js' || filter === 'MongoDB'" class="glass p-6 rounded-xl shadow-xl transition hover:scale-105">
+      <img src="img/jobboard-thumb.jpg" alt="Job Board" class="w-full h-48 object-cover rounded-lg mb-4" />
+      <h3 class="text-2xl font-semibold text-indigo-300 mb-2">Job Board - MERN Stack</h3>
+      <p class="text-gray-300 mb-3">Job application tracker built with MongoDB, Express, React, and Node.js.</p>
+      <div class="flex flex-wrap gap-2 mb-4">
+        <span class="text-sm bg-blue-600 px-2 py-1 rounded">React</span>
+        <span class="text-sm bg-green-600 px-2 py-1 rounded">Node.js</span>
+        <span class="text-sm bg-gray-600 px-2 py-1 rounded">MongoDB</span>
+      </div>
+      <div class="flex justify-between">
+        <a href="https://github.com/kjethi/job-board" target="_blank" class="text-indigo-400 hover:underline">GitHub</a>
+        <a href="https://jobboard-demo.vercel.app" target="_blank" class="text-purple-400 hover:underline">Live Demo</a>
+      </div>
+    </div>
+
+    <!-- Project 3 -->
+    <div x-show="filter === 'All' || filter === 'AWS' || filter === 'React'" class="glass p-6 rounded-xl shadow-xl transition hover:scale-105">
+      <img src="img/chatapp-thumb.jpg" alt="Chat App" class="w-full h-48 object-cover rounded-lg mb-4" />
+      <h3 class="text-2xl font-semibold text-indigo-300 mb-2">AWS Serverless Chat App</h3>
+      <p class="text-gray-300 mb-3">Built using AppSync, Lambda, Cognito, and DynamoDB with React frontend.</p>
+      <div class="flex flex-wrap gap-2 mb-4">
+        <span class="text-sm bg-indigo-600 px-2 py-1 rounded">AWS</span>
+        <span class="text-sm bg-blue-600 px-2 py-1 rounded">React</span>
+        <span class="text-sm bg-yellow-500 px-2 py-1 rounded">AppSync</span>
+      </div>
+      <div class="flex justify-between">
+        <a href="https://github.com/kjethi/aws-chat-app" target="_blank" class="text-indigo-400 hover:underline">GitHub</a>
+        <a href="https://aws-chat-demo.vercel.app" target="_blank" class="text-purple-400 hover:underline">Live Demo</a>
+      </div>
+    </div>
+
+    <!-- Project 4 -->
+    <div x-show="filter === 'All' || filter === 'React'" class="glass p-6 rounded-xl shadow-xl transition hover:scale-105">
+      <img src="img/dashboard-thumb.jpg" alt="Admin Dashboard" class="w-full h-48 object-cover rounded-lg mb-4" />
+      <h3 class="text-2xl font-semibold text-indigo-300 mb-2">Admin Dashboard</h3>
+      <p class="text-gray-300 mb-3">Reusable dashboard template with charts, dark mode, and responsive layout.</p>
+      <div class="flex flex-wrap gap-2 mb-4">
+        <span class="text-sm bg-blue-600 px-2 py-1 rounded">React</span>
+        <span class="text-sm bg-purple-600 px-2 py-1 rounded">TailwindCSS</span>
+        <span class="text-sm bg-pink-600 px-2 py-1 rounded">Chart.js</span>
+      </div>
+      <div class="flex justify-between">
+        <a href="https://github.com/kjethi/react-dashboard" target="_blank" class="text-indigo-400 hover:underline">GitHub</a>
+        <a href="https://react-dashboard-kj.vercel.app" target="_blank" class="text-purple-400 hover:underline">Live Demo</a>
+      </div>
+    </div>
+  </div>
+</section>
+
 
     <!-- Projects Section -->
     <!-- <section id="projects" class="px-6 md:px-32 py-20 fade-in fade-delay-3">
