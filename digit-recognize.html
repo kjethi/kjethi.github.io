@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digit Recognizer</title>
+    <style>
+        body { font-family: Arial, sans-serif; background: #f7f7f7; margin: 0; padding: 0; }
+        .container { max-width: 400px; margin: 40px auto; background: #fff; padding: 2em; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+        h1 { text-align: center; color: #333; }
+        input[type="file"] { display: block; margin: 1em auto; }
+        button { display: block; margin: 1em auto; padding: 0.5em 2em; font-size: 1em; border: none; border-radius: 5px; background: #007bff; color: #fff; cursor: pointer; }
+        button:disabled { background: #aaa; }
+        .result { margin-top: 2em; text-align: center; font-size: 1.2em; }
+        .preview { display: block; margin: 1em auto; max-width: 100px; max-height: 100px; border: 1px solid #ddd; border-radius: 5px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Digit Recognizer</h1>
+        <input type="file" id="imageInput" accept="image/*">
+        <img id="preview" class="preview" style="display:none;"/>
+        <button id="predictBtn" disabled>Predict</button>
+        <div class="result" id="result"></div>
+    </div>
+    <script>
+        const imageInput = document.getElementById('imageInput');
+        const predictBtn = document.getElementById('predictBtn');
+        const resultDiv = document.getElementById('result');
+        const previewImg = document.getElementById('preview');
+
+        let selectedFile = null;
+
+        imageInput.addEventListener('change', function(e) {
+            if (e.target.files && e.target.files[0]) {
+                selectedFile = e.target.files[0];
+                predictBtn.disabled = false;
+                // Show preview
+                const reader = new FileReader();
+                reader.onload = function(ev) {
+                    previewImg.src = ev.target.result;
+                    previewImg.style.display = 'block';
+                };
+                reader.readAsDataURL(selectedFile);
+            } else {
+                selectedFile = null;
+                predictBtn.disabled = true;
+                previewImg.style.display = 'none';
+            }
+            resultDiv.textContent = '';
+        });
+
+        predictBtn.addEventListener('click', async function() {
+            if (!selectedFile) return;
+            resultDiv.textContent = 'Predicting...';
+            const formData = new FormData();
+            formData.append('file', selectedFile);
+            try {
+                const response = await fetch('http://localhost:8000/predict', {
+                    method: 'POST',
+                    body: formData
+                });
+                if (!response.ok) {
+                    const err = await response.json();
+                    resultDiv.textContent = 'Error: ' + (err.detail || response.statusText);
+                    return;
+                }
+                const data = await response.json();
+                resultDiv.innerHTML = `<b>Prediction:</b> ${data.predicted_digit} <br><b>Confidence:</b> ${(data.confidence*100).toFixed(2)}%`;
+            } catch (err) {
+                resultDiv.textContent = 'Error: ' + err.message;
+            }
+        });
+    </script>
+</body>
+</html> 
